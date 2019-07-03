@@ -22,7 +22,7 @@ html, body {
   box-shadow: 7px 7px darken(yellow, 10);
 }
 
-@media (min-width: 481px){
+@media (min-width: 545px){
 
   html, body {
     font-size: 100%;
@@ -32,4 +32,11 @@ html, body {
     height: 40px;
   }
 
+}
+
+@media (min-width: 1200px){
+
+  html, body {
+    font-size: 110%;
+  }
 }
