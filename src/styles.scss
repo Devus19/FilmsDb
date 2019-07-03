@@ -1,8 +1,35 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-size: 80%;
 }
 
 * {
   box-sizing: border-box;
+  font-size: em;
+}
+
+.btn {
+  width: 100px;
+  height: 30px;
+  margin: 10px;
+  padding: 10px;
+  background-color: yellow;
+  border: 0;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  box-shadow: 7px 7px darken(yellow, 10);
+}
+
+@media (min-width: 481px){
+
+  html, body {
+    font-size: 100%;
+  }
+
+  .btn {
+    height: 40px;
+  }
+
 }
