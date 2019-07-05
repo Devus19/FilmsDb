@@ -1,0 +1,13 @@
+<form class="login__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <label class="login__group">
+    Account name:
+    <div class="error" *ngIf="loginForm.controls['login'].touched && !loginForm.controls['login'].valid">Enter Account name!</div>
+    <input type="text" name="login" class="login__field" required formControlName="login">
+  </label>
+  <label class="login__group">
+    Password:
+    <div class="error" *ngIf="loginForm.controls['password'].touched && !loginForm.controls['password'].valid">Enter password!</div>
+    <input type="password" class="login__field" name="password" required formControlName="password">
+  </label>
+  <input type="submit" name="submit" class="btn login__btn" value="Zaloguj">
+</form>

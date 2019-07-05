@@ -1,7 +1,9 @@
+@import "colors";
+
 html, body {
   margin: 0;
   padding: 0;
-  font-size: 80%;
+  background: $primaryBg;
 }
 
 * {
@@ -9,17 +11,22 @@ html, body {
   font-size: em;
 }
 
+.error {
+  color: red;
+  font-size: 70%;
+}
+
 .btn {
   width: 100px;
   height: 30px;
   margin: 10px;
   padding: 10px;
-  background-color: yellow;
+  background-color: $primary;
   border: 0;
   text-align: center;
   text-decoration: none;
   color: black;
-  box-shadow: 7px 7px darken(yellow, 10);
+  box-shadow: 7px 7px $primaryBtnBg;
 }
 
 @media (min-width: 545px){
