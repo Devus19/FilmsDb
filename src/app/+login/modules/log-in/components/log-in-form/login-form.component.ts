@@ -1,6 +1,14 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { LoginData } from 'src/app/shared/models/LoginData.model';
+import { LoginData } from 'src/app/shared/models/Login.models';
+
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  Input,
+  OnChanges
+} from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
@@ -13,15 +21,33 @@ export class LoginFormComponent implements OnInit {
     password: new FormControl('', Validators.required)
   });
 
-  @Output() formDataEmitter: EventEmitter<LoginData> = new EventEmitter();
+  loading = false;
+
+  @Output() formData: EventEmitter<LoginData> = new EventEmitter();
+  @Input() error: string;
 
   constructor() {}
 
   ngOnInit() {}
 
+  isFieldValid(field: string) {
+    return (
+      !this.loginForm.get(field).valid && this.loginForm.get(field).touched
+    );
+  }
+
   onSubmit() {
+    this.loading = true;
+
     if (this.loginForm.valid) {
-      this.formDataEmitter.emit(this.loginForm.value);
+      this.formData.emit(this.loginForm.value);
+    } else {
+      Object.keys(this.loginForm.controls).forEach(field => {
+        const control = this.loginForm.get(field);
+        control.markAsTouched({ onlySelf: true });
+      });
     }
+
+    setTimeout(() => this.loading = false, 250);
   }
 }

@@ -1,5 +1,21 @@
 <header class="top-menu">
-  <img src="assets/video-camera.svg" class="top-menu__logo" />
-  <h1 class="top-menu__title">Films&nbsp;Database</h1>
-  <a routerLink="/login" class="btn top-menu__btn">Zaloguj</a>
+  <img
+    src="assets/video-camera.svg"
+    class="top-menu__logo" />
+  <h1
+    class="top-menu__title">
+    Films&nbsp;Database
+  </h1>
+  <a
+    class="btn top-menu__btn"
+    *ngIf="!isLogged && currentRoute !== '/login'"
+    [routerLink]="['/login']">
+    Zaloguj
+  </a>
+  <a
+    class="btn top-menu__btn"
+    *ngIf="isLogged"
+    (click)="logout()">
+    Wyloguj
+  </a>
 </header>

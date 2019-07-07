@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+
 import { MessageBoxComponent } from './components/message-box/message-box.component';
 
 const routes: Routes = [
