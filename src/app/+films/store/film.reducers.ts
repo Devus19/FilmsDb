@@ -27,12 +27,12 @@ const reducer = createReducer(
   initialState,
   on(FilmActions.loadFilmsSuccess, (state, action) => ({
     ...state,
-    films: action.payload.collection,
-    totalFilms: action.payload.total
+    films: action.collection,
+    totalFilms: action.total
   })),
   on(FilmActions.loadActorsSuccess, (state, action) => ({
     ...state,
-    actors: action.payload.collection
+    actors: action.collection
   }))
 );
 

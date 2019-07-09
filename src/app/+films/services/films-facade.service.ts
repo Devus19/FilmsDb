@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { SorterService } from './sorter.service';
 import { FilmsService } from './films.service';
 import { Store } from '@ngrx/store';
-import { FilmState, FilmsState, ActorsState } from '../store/film.reducers';
+import { FilmState, FilmsState } from '../store/film.reducers';
 import { FilmActions } from '../store/film.actions';
 import { sortBy } from '../types/film.types';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { selectFilms, selectActors, selectFilmsWithActors } from '../store/film.selectors';
+import { selectFilms, selectFilmWithActors } from '../store/film.selectors';
 import { FilmPopulated } from 'src/app/shared/models/Films.models';
 
 @Injectable({
@@ -62,7 +62,7 @@ export class FilmsFacadeService {
     return this.store.select(selectFilms);
   }
 
-  getPopulatedFilms(): Observable<any> {
-    return this.store.select(selectFilmsWithActors);
+  getPopulatedFilm(id: string): Observable<FilmPopulated> {
+    return this.store.select(selectFilmWithActors(id));
   }
 }

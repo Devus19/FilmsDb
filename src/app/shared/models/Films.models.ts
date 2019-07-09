@@ -19,10 +19,8 @@ export interface Films {
 }
 
 export interface FilmResponse {
-  payload: {
-    collection: Film[];
-    total: number;
-  };
+  collection: Film[];
+  total: number;
 }
 
 export interface Actor {
@@ -37,10 +35,8 @@ export interface Actor {
 }
 
 export interface ActorsResponse {
-  payload: {
-    collection: Actor[];
-    total: number;
-  };
+  collection: Actor[];
+  total: number;
 }
 
 export interface FilmPopulated {

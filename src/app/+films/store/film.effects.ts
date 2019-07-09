@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { throwError } from 'rxjs';
 import { map, mergeMap, catchError } from 'rxjs/operators';
-import { FilmActions, FilmActionTypes } from './film.actions';
+import { FilmActions } from './film.actions';
 import { FilmsService } from '../services/films.service';
 
 @Injectable()
@@ -12,10 +12,7 @@ export class FilmEffects {
       ofType(FilmActions.loadFilms),
       mergeMap(() =>
         this.filmsService.getMovies().pipe(
-          map(res => ({
-            type: FilmActionTypes.loadFilmsSuccess,
-            payload: res
-          })),
+          map(res => FilmActions.loadFilmsSuccess(res)),
           catchError(() => throwError('whoops'))
         )
       )
@@ -26,10 +23,7 @@ export class FilmEffects {
           this.actions$.pipe(
             ofType(FilmActions.loadActors),
             mergeMap(() => this.filmsService.getActors().pipe(
-              map(res => ({
-                type: FilmActionTypes.loadActorsSuccess,
-                payload: res
-              })),
+              map(res => FilmActions.loadActorsSuccess(res)),
               catchError(() => throwError('whooops2'))
             ))
           )

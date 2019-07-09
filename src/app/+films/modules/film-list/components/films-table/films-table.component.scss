@@ -72,8 +72,7 @@ $tableWidth: 320px;
   background-color: rgba(white, 0.5);
   width: $tableWidth;
   height: 100%;
-  border: 0;
-  outline: 0;
+  border-color: transparent;
 }
 
 @media (min-width: 545px){

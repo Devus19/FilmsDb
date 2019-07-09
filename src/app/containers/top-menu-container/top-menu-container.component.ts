@@ -18,9 +18,7 @@ export class TopMenuContainerComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.auth.isLoggedIn().subscribe(isLogged => (this.isLoggedIn = isLogged));
-    this.auth.getUserData().subscribe(
-      val => this.userData = val
-    );
+    this.auth.getUserData().subscribe(val => (this.userData = val));
     this.router.events.subscribe(
       event => (this.currentRoute = this.router.url)
     );

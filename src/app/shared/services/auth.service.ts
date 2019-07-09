@@ -68,6 +68,7 @@ export class AuthService {
   }
 
   getUserData(): Observable<UserData> {
+    this.userData$.next(JSON.parse(window.sessionStorage.getItem('userData')));
     return this.userData$.asObservable();
   }
 
@@ -86,12 +87,12 @@ export class AuthService {
 
   logout() {
     window.sessionStorage.clear();
-    this.isLogged$.next(false);
     this.router.navigate(['login']);
+    this.isLogged$.next(false);
   }
 
   isLoggedIn() {
-    this.isLogged$.next(!!window.sessionStorage.getItem('token'));
+    this.isLogged$.next(!!this.getToken());
     return this.isLogged$.asObservable();
   }
 
