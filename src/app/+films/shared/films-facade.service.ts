@@ -5,10 +5,10 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 
-import { FilmActions } from '../../store/film.actions';
-import { FilmsState, FilmState } from '../../store/film.reducers';
-import { selectFilms, selectFilmWithActors } from '../../store/film.selectors';
-import { sortBy } from '../models/film.models';
+import { FilmActions } from '../store/film.actions';
+import { FilmsState, FilmState } from '../store/film.reducers';
+import { selectFilms, selectFilmWithActors } from '../store/film.selectors';
+import { sortBy } from './film.models';
 import { FilmsService } from './films.service';
 import { SorterService } from './sorter.service';
 

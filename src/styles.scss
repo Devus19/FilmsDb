@@ -1,54 +1,12 @@
-@import "partial/colors";
+@import "globals/colors";
+@import "globals/reset";
+@import "globals/buttons";
 
 html, body {
-  margin: 0;
-  padding: 0;
   background: $primaryBg;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .error {
   color: red;
   font-size: 70%;
-}
-
-.btn {
-  width: 100px;
-  height: 30px;
-  margin: 10px;
-  padding: 10px;
-  background-color: $primary;
-  border: 0;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  box-shadow: 3px 3px $primaryBtnBg;
-  cursor: pointer;
-}
-
-@media (min-width: 545px){
-
-  html, body {
-    font-size: 100%;
-  }
-
-  .btn {
-    height: 40px;
-  }
-
-}
-
-@media (min-width: 1200px){
-
-  html, body {
-    font-size: 110%;
-  }
-
-  .btn {
-    height: 40px;
-    box-shadow: 5px 5px $primaryBtnBg;
-  }
 }

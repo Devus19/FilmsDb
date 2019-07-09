@@ -1,1 +1,9 @@
-<p>actors-list works!</p>
+<ul>
+  <li *ngFor="let actor of actors">
+    <img src={{actor.photoUrl}}/>
+    <a href="https://www.imdb.com/name/{{actor.imdbId}}">
+      <span>{{actor.name}}</span>
+    </a>
+  </li>
+</ul>
+

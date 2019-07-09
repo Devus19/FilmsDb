@@ -1,0 +1,28 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.btn {
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (min-width: 545px){
+
+  html, body {
+    font-size: 100%;
+  }
+}
+
+@media (min-width: 1200px){
+
+  html, body {
+    font-size: 110%;
+  }
+}

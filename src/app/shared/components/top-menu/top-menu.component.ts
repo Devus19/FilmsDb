@@ -24,9 +24,7 @@ export class TopMenuComponent implements OnInit {
     );
   }
 
-  logout($event: boolean) {
-    if ($event) {
-      this.auth.logout();
-    }
+  logout() {
+    this.auth.logout();
   }
 }

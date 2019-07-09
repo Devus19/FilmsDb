@@ -1,1 +1,9 @@
-<p>film-specifics works!</p>
+<a href="https://www.imdb.com/title/{{film.imdbId}}">
+  <img src={{film.posterUrl}}/>
+</a>
+<ul>
+  <li>Tytuł: {{film.title}}</li>
+  <li>Reżyser: {{film.director}}</li>
+  <li>Rok produkcji: {{film.year}}</li>
+  <li>Metascore: {{film.metascore}}</li>
+</ul>

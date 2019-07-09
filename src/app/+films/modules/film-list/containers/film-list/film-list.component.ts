@@ -1,5 +1,5 @@
-import { FilmsFacadeService } from 'src/app/+films/shared/services/films-facade.service';
-import { Sort, sortBy } from 'src/app/+films/shared/models/film.models';
+import { FilmsFacadeService } from 'src/app/+films/shared/films-facade.service';
+import { Sort, sortBy } from 'src/app/+films/shared/film.models';
 import { Films } from 'src/app/shared/films/models/films.models';
 
 import { Component, OnInit } from '@angular/core';

@@ -6,16 +6,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './films-count.component.html',
   styleUrls: ['./films-count.component.scss']
 })
-export class FilmsCountComponent implements OnInit {
+export class FilmsCountComponent {
   @Output() setItemsPerPage = new EventEmitter<number>();
 
   filmCount = new FormGroup({
     filmsNumber: new FormControl('', [Validators.required, Validators.min(3)])
   });
-
-  constructor() {}
-
-  ngOnInit() {}
 
   handleSubmit() {
     if (this.filmCount.valid) {

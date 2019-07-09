@@ -26,9 +26,9 @@ export const selectFilmWithActors = (id: string) =>
     (filmsState: FilmsState, actorsState: ActorsState) => {
       if (!!actorsState.actors && !!filmsState.films) {
         const actors = Object.values(actorsState.actors);
-        const film = Object.values(filmsState.films).filter(
+        const film = (Object.values(filmsState.films).filter(
           film => film.imdbId === id
-        )[0] as unknown as Film;
+        )[0] as unknown) as Film;
 
         const populatedFilm = {
           ...film,

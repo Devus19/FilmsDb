@@ -2,13 +2,13 @@ import { BehaviorSubject } from 'rxjs';
 
 import { Injectable } from '@angular/core';
 
-import { Sort, sortBy, sortDir } from '../models/film.models';
+import { Sort, sortBy, sortDir } from './film.models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SorterService {
-  constructor() {}
+
 
   private defaultSort: Sort = {
     byWhat: null,

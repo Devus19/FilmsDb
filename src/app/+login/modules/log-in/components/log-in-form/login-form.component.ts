@@ -1,6 +1,6 @@
 import { LoginData } from 'src/app/shared/login/models/login.models';
 
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent {
   loginForm = new FormGroup({
     login: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)
@@ -18,10 +18,6 @@ export class LoginFormComponent implements OnInit {
   @Input() error: string;
   @Input() isLoading = false;
 
-  constructor() {}
-
-  ngOnInit() {}
-
   isFieldValid(field: string) {
     return (
       !this.loginForm.get(field).valid && this.loginForm.get(field).touched
@@ -29,7 +25,6 @@ export class LoginFormComponent implements OnInit {
   }
 
   onSubmit() {
-
     if (this.loginForm.valid) {
       this.formData.emit(this.loginForm.value);
     } else {

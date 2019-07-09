@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Film } from 'src/app/shared/films/models/films.models';
 
 @Component({
   selector: 'app-film-specifics',
   templateUrl: './film-specifics.component.html',
   styleUrls: ['./film-specifics.component.scss']
 })
-export class FilmSpecificsComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
+export class FilmSpecificsComponent {
+  @Input() film: Partial<Film>;
 }

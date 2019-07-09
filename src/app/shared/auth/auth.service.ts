@@ -1,7 +1,7 @@
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { FilmsService } from 'src/app/+films/shared/services/films.service';
-import { SorterService } from 'src/app/+films/shared/services/sorter.service';
+import { FilmsService } from 'src/app/+films/shared/films.service';
+import { SorterService } from 'src/app/+films/shared/sorter.service';
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';

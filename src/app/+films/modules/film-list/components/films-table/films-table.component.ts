@@ -1,14 +1,14 @@
-import { Sort, sortBy, sortDir } from 'src/app/+films/shared/models/film.models';
+import { Sort, sortBy, sortDir } from 'src/app/+films/shared/film.models';
 import { Films } from 'src/app/shared/films/models/films.models';
 
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-films-table',
   templateUrl: './films-table.component.html',
   styleUrls: ['./films-table.component.scss']
 })
-export class FilmsTableComponent implements OnInit {
+export class FilmsTableComponent {
   @Input() itemsPerPage: number;
   @Input() currentPage: number;
   @Input() films: Films;
@@ -20,7 +20,6 @@ export class FilmsTableComponent implements OnInit {
   year: sortDir;
   asc = '▲';
   desc = '▼';
-
 
   @Input() set sortedBy(sort: Sort) {
     this.title = null;
@@ -38,11 +37,6 @@ export class FilmsTableComponent implements OnInit {
         this.year = sort.order;
         break;
     }
-  }
-
-  constructor() {}
-
-  ngOnInit() {
   }
 
   changeSort(sortBy: sortBy) {
