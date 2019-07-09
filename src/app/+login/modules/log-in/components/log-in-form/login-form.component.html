@@ -10,6 +10,6 @@
     <div class="error" *ngIf="isFieldValid('password')">Enter password!</div>
     <input type="password" class="login__field" name="password" required formControlName="password">
   </label>
-  <input type="submit" name="submit" class="btn login__btn" value="Zaloguj" *ngIf="!loading">
-  <img rel="prerender" src="../../../../../../assets/loader.svg" *ngIf="loading">
+  <input type="submit" name="submit" class="btn login__btn" value="Zaloguj" *ngIf="!isLoading">
+  <img rel="prerender" src="../../../../../../assets/loader.svg" *ngIf="isLoading">
 </form>

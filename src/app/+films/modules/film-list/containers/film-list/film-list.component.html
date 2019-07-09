@@ -1,1 +1,19 @@
-<p>film-list works!</p>
+<app-films-count
+  (setItemsPerPage)="setItemsPerPage($event)"
+>
+</app-films-count>
+<app-films-table
+  [isLoading]="isLoading"
+  [currentPage]="currentPage"
+  [itemsPerPage]="itemsPerPage"
+  [films]="films"
+  [sortedBy]="sortedBy"
+  (sortBy)="sortBy($event)"
+>
+</app-films-table>
+<app-films-pagination
+  [numberOfPages]="numberOfPages"
+  [currentPage]="currentPage"
+  (setPage)="setPage($event)"
+>
+</app-films-pagination>

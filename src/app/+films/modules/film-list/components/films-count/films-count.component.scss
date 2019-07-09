@@ -1,0 +1,14 @@
+.count {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 3px;
+}
+
+.count__inputs {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}

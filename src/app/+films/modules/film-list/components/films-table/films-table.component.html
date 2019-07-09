@@ -1,1 +1,31 @@
-<p>films-table works!</p>
+<table class="table">
+  <tr class="table__headers">
+    <th class="table__lp">L.p.</th>
+    <th class="table__title" (click)="changeSort('title')">Tytuł
+      {{ title === '1' ? asc : (title === '-1' ? desc : '') }}</th>
+    <th class="table__year" (click)="changeSort('year')">Rok {{ year === '1' ? asc : (year === '-1' ? desc : '') }}</th>
+    <th class="table__metascore" (click)="changeSort('metascore')">Metascore
+      {{ metascore === '1' ? asc : (metascore === '-1' ? desc : '') }}
+    </th>
+  </tr>
+  <tr
+    class="table__row"
+    *ngFor="let film of films; let i = index; let even = even;"
+    [routerLink]="['../details/', film.imdbId]"
+    [ngClass]="{'table__row--even': even}"
+  >
+    <td>{{ ((i + 1) + itemsPerPage * (currentPage - 1)) }}.</td>
+    <td>{{film.title}}</td>
+    <td class="table__year-cells">{{film.year}}</td>
+    <td class="table__metascore-cells"> {{film.metascore}}</td>
+  </tr>
+  <div
+    class="loader"
+    *ngIf="isLoading"
+  >
+    <img
+      rel="preload"
+      src="../../../../../../assets/loader.svg"
+    />
+  </div>
+</table>

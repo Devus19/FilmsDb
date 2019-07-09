@@ -12,10 +12,14 @@
     [routerLink]="['/login']">
     Zaloguj
   </a>
-  <a
-    class="btn top-menu__btn"
-    *ngIf="isLogged"
-    (click)="logout()">
-    Wyloguj
-  </a>
+  <div *ngIf="!!userData && isLogged">
+    <span>
+    {{userData.firstName}}
+    </span>
+    <a
+      class="btn top-menu__btn"
+      (click)="logout()">
+      Wyloguj
+    </a>
+</div>
 </header>

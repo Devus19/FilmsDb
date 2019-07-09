@@ -21,10 +21,9 @@ export class LoginFormComponent implements OnInit {
     password: new FormControl('', Validators.required)
   });
 
-  loading = false;
-
   @Output() formData: EventEmitter<LoginData> = new EventEmitter();
   @Input() error: string;
+  @Input() isLoading = false;
 
   constructor() {}
 
@@ -37,7 +36,6 @@ export class LoginFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.loading = true;
 
     if (this.loginForm.valid) {
       this.formData.emit(this.loginForm.value);
@@ -47,7 +45,5 @@ export class LoginFormComponent implements OnInit {
         control.markAsTouched({ onlySelf: true });
       });
     }
-
-    setTimeout(() => this.loading = false, 250);
   }
 }

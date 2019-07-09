@@ -11,12 +11,12 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
     loadChildren: () => import('./+login/login.module').then(m => m.LoginModule)
   },
   {
     path: '',
-    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
     loadChildren: () =>
       import('./+welcome/welcome.module').then(m => m.WelcomeModule),
     pathMatch: 'full'

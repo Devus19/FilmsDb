@@ -2,6 +2,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserData } from 'src/app/shared/models/Login.models';
 
 @Component({
   selector: 'app-top-menu-container',
@@ -11,11 +12,13 @@ import { Router } from '@angular/router';
 export class TopMenuContainerComponent implements OnInit, OnDestroy {
   isLoggedIn: boolean;
   currentRoute: string;
+  userData: UserData;
 
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
     this.auth.isLoggedIn().subscribe(isLogged => (this.isLoggedIn = isLogged));
+    this.userData = this.auth.getUserData();
     this.router.events.subscribe(
       event => (this.currentRoute = this.router.url)
     );

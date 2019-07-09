@@ -1,1 +1,8 @@
-<p>films-count works!</p>
+<form class="count" [formGroup]="filmCount" (ngSubmit)="handleSubmit()">
+  <label>Wyniki na stronę:</label>
+  <span class="error" *ngIf="!filmCount.valid && filmCount.touched">Minimum 3 pozycje</span>
+  <div class="count__inputs">
+    <input type="number" min="5" formControlName="filmsNumber">
+    <input type="submit">
+  </div>
+</form>
