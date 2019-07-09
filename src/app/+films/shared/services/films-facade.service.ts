@@ -1,14 +1,16 @@
-import { Injectable } from '@angular/core';
-import { SorterService } from './sorter.service';
-import { FilmsService } from './films.service';
-import { Store } from '@ngrx/store';
-import { FilmState, FilmsState } from '../store/film.reducers';
-import { FilmActions } from '../store/film.actions';
-import { sortBy } from '../types/film.types';
 import { Observable } from 'rxjs';
+import { FilmPopulated } from 'src/app/shared/films/models/films.models';
+
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { selectFilms, selectFilmWithActors } from '../store/film.selectors';
-import { FilmPopulated } from 'src/app/shared/models/Films.models';
+import { Store } from '@ngrx/store';
+
+import { FilmActions } from '../../store/film.actions';
+import { FilmsState, FilmState } from '../../store/film.reducers';
+import { selectFilms, selectFilmWithActors } from '../../store/film.selectors';
+import { sortBy } from '../models/film.models';
+import { FilmsService } from './films.service';
+import { SorterService } from './sorter.service';
 
 @Injectable({
   providedIn: 'root'

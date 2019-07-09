@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { throwError } from 'rxjs';
-import { map, mergeMap, catchError } from 'rxjs/operators';
+import { catchError, map, mergeMap } from 'rxjs/operators';
+
+import { Injectable } from '@angular/core';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+
+import { FilmsService } from '../shared/services/films.service';
 import { FilmActions } from './film.actions';
-import { FilmsService } from '../services/films.service';
 
 @Injectable()
 export class FilmEffects {

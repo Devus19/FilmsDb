@@ -1,13 +1,6 @@
-import { LoginData } from 'src/app/shared/models/Login.models';
+import { LoginData } from 'src/app/shared/login/models/login.models';
 
-import {
-  Component,
-  EventEmitter,
-  OnInit,
-  Output,
-  Input,
-  OnChanges
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({

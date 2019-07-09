@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 
 import { FilmsRoutingModule } from './films-routing.module';
-import { FilmListModule } from './modules/film-list/film-list.module';
 import { FilmDetailsModule } from './modules/film-details/film-details.module';
-import { StoreModule } from '@ngrx/store';
-import { FilmsReducer } from './store/film.reducers';
-import { EffectsModule } from '@ngrx/effects';
+import { FilmListModule } from './modules/film-list/film-list.module';
 import { FilmEffects } from './store/film.effects';
+import { FilmsReducer } from './store/film.reducers';
 
 @NgModule({
   declarations: [],

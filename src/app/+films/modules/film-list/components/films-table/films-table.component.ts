@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Sort, sortDir, sortBy } from 'src/app/+films/types/film.types';
-import { Films } from 'src/app/shared/models/Films.models';
+import { Sort, sortBy, sortDir } from 'src/app/+films/shared/models/film.models';
+import { Films } from 'src/app/shared/films/models/films.models';
+
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-films-table',

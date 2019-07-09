@@ -1,8 +1,8 @@
-import { LoginData } from 'src/app/shared/models/Login.models';
-import { AuthService } from 'src/app/shared/services/auth.service';
-
-import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LoginData } from 'src/app/shared/login/models/login.models';
+import { AuthService } from 'src/app/shared/auth/auth.service';
+
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-log-in',

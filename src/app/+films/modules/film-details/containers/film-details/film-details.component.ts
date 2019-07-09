@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FilmsFacadeService } from 'src/app/+films/services/films-facade.service';
-import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
+import { FilmsFacadeService } from 'src/app/+films/shared/services/films-facade.service';
+
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-film-details',
@@ -16,10 +17,8 @@ export class FilmDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.facade.loadActors();
-    this.route.params.pipe(
-      switchMap(val => this.facade.getPopulatedFilm(val.id))
-    ).subscribe(
-      elo => console.log(elo)
-    )
+    this.route.params
+      .pipe(switchMap(val => this.facade.getPopulatedFilm(val.id)))
+      .subscribe(elo => console.log(elo));
   }
 }

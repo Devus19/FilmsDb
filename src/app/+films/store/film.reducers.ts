@@ -1,5 +1,7 @@
-import { createReducer, Action, on } from '@ngrx/store';
-import { Film, Actor } from 'src/app/shared/models/Films.models';
+import { Actor, Film } from 'src/app/shared/films/models/films.models';
+
+import { Action, createReducer, on } from '@ngrx/store';
+
 import { FilmActions } from './film.actions';
 
 export interface FilmState {

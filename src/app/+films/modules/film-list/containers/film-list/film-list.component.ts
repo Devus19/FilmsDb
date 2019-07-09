@@ -1,7 +1,8 @@
+import { FilmsFacadeService } from 'src/app/+films/shared/services/films-facade.service';
+import { Sort, sortBy } from 'src/app/+films/shared/models/film.models';
+import { Films } from 'src/app/shared/films/models/films.models';
+
 import { Component, OnInit } from '@angular/core';
-import { sortBy, Sort } from 'src/app/+films/types/film.types';
-import { FilmsFacadeService } from 'src/app/+films/services/films-facade.service';
-import { Films } from 'src/app/shared/models/Films.models';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({

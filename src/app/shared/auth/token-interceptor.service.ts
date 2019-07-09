@@ -1,11 +1,8 @@
-import { Injectable } from '@angular/core';
-import {
-  HttpInterceptor,
-  HttpEvent,
-  HttpHandler,
-  HttpRequest
-} from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
 import { AuthService } from './auth.service';
 
 @Injectable({ providedIn: 'root' })

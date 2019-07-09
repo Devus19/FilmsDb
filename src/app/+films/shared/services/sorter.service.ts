@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Sort, sortBy, sortDir } from '../types/film.types';
 import { BehaviorSubject } from 'rxjs';
+
+import { Injectable } from '@angular/core';
+
+import { Sort, sortBy, sortDir } from '../models/film.models';
 
 @Injectable({
   providedIn: 'root'

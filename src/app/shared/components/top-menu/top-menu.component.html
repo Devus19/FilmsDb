@@ -12,7 +12,7 @@
     [routerLink]="['/login']">
     Zaloguj
   </a>
-  <div *ngIf="!!userData && isLogged">
+  <div *ngIf="!!userData && isLoggedIn">
     <span>
     {{userData.firstName}}
     </span>

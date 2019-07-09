@@ -1,5 +1,6 @@
+import { ActorsResponse, FilmResponse } from 'src/app/shared/films/models/films.models';
+
 import { createAction, props } from '@ngrx/store';
-import { FilmResponse, ActorsResponse } from 'src/app/shared/models/Films.models';
 
 export enum FilmActionTypes {
     loadFilms = '[Films] LoadFilms',

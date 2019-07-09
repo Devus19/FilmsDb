@@ -1,25 +1,22 @@
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { TopMenuComponent } from './components/top-menu/top-menu.component';
-import { TopMenuContainerComponent } from './containers/top-menu-container/top-menu-container.component';
-import { TokenInterceptorService } from './shared/services/token-interceptor.service';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
+import { PageNotFoundComponent } from './shared/containers/page-not-found/page-not-found.component';
+import { TopMenuComponent } from './shared/components/top-menu/top-menu.component';
+import { TokenInterceptorService } from './shared/auth/token-interceptor.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopMenuComponent,
-    TopMenuContainerComponent,
     PageNotFoundComponent,
-    TopMenuContainerComponent
   ],
   imports: [
     BrowserModule,

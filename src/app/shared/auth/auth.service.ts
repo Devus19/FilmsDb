@@ -1,12 +1,13 @@
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { FilmsService } from 'src/app/+films/shared/services/films.service';
+import { SorterService } from 'src/app/+films/shared/services/sorter.service';
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-import { LoginData, LoginResponse, UserData } from '../models/Login.models';
 import { Router } from '@angular/router';
-import { BehaviorSubject, throwError, Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { SorterService } from 'src/app/+films/services/sorter.service';
-import { FilmsService } from 'src/app/+films/services/films.service';
+
+import { LoginData, LoginResponse, UserData } from '../login/models/login.models';
 
 @Injectable({
   providedIn: 'root'

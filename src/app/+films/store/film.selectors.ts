@@ -1,6 +1,8 @@
-import { createSelector, createFeatureSelector } from '@ngrx/store';
-import { FilmState, FilmsState, ActorsState } from './film.reducers';
-import { Film } from 'src/app/shared/models/Films.models';
+import { Film } from 'src/app/shared/films/models/films.models';
+
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+
+import { ActorsState, FilmsState, FilmState } from './film.reducers';
 
 export const getFilmsFeatureState = createFeatureSelector<FilmState>('Film');
 

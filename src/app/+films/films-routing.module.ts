@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from './auth.guard';
+import { RouterModule, Routes } from '@angular/router';
+
+import { AuthGuard } from '../+login/shared/login.guard';
+import {
+    FilmDetailsComponent
+} from './modules/film-details/containers/film-details/film-details.component';
 import { FilmListComponent } from './modules/film-list/containers/film-list/film-list.component';
-import { FilmDetailsComponent } from './modules/film-details/containers/film-details/film-details.component';
 
 const routes: Routes = [
   {

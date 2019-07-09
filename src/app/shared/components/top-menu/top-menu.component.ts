@@ -1,15 +1,15 @@
-import { AuthService } from 'src/app/shared/services/auth.service';
+import { UserData } from '../../login/models/login.models';
 
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
-import { UserData } from 'src/app/shared/models/Login.models';
 
 @Component({
-  selector: 'app-top-menu-container',
-  templateUrl: './top-menu-container.component.html',
-  styleUrls: ['./top-menu-container.component.scss']
+  selector: 'app-top-menu',
+  templateUrl: './top-menu.component.html',
+  styleUrls: ['./top-menu.component.scss']
 })
-export class TopMenuContainerComponent implements OnInit, OnDestroy {
+export class TopMenuComponent implements OnInit {
   isLoggedIn: boolean;
   currentRoute: string;
   userData: UserData;
@@ -23,8 +23,6 @@ export class TopMenuContainerComponent implements OnInit, OnDestroy {
       event => (this.currentRoute = this.router.url)
     );
   }
-
-  ngOnDestroy() {}
 
   logout($event: boolean) {
     if ($event) {

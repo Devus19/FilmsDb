@@ -1,8 +1,10 @@
-import { Injectable } from '@angular/core';
+import { ActorsResponse, FilmResponse } from 'src/app/shared/films/models/films.models';
+
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { FilmResponse, ActorsResponse } from 'src/app/shared/models/Films.models';
+import { Injectable } from '@angular/core';
+import {} from '@angular/router';
+
 import { SorterService } from './sorter.service';
-import { } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'

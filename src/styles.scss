@@ -1,4 +1,4 @@
-@import "colors";
+@import "partial/colors";
 
 html, body {
   margin: 0;
@@ -8,7 +8,6 @@ html, body {
 
 * {
   box-sizing: border-box;
-  font-size: em;
 }
 
 .error {

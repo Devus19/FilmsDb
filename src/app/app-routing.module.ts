@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './shared/auth/auth.guard';
+import { PageNotFoundComponent } from './shared/containers/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
     path: 'films',
+    canLoad: [AuthGuard],
     loadChildren: () => import('./+films/films.module').then(m => m.FilmsModule),
   },
   {
     path: 'login',
-    canLoad: [AuthGuard],
     loadChildren: () => import('./+login/login.module').then(m => m.LoginModule)
   },
   {
     path: '',
-    canLoad: [AuthGuard],
     loadChildren: () =>
       import('./+welcome/welcome.module').then(m => m.WelcomeModule),
     pathMatch: 'full'
