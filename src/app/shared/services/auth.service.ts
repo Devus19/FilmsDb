@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { LoginData, LoginResponse, UserData } from '../models/Login.models';
 import { Router } from '@angular/router';
-import { BehaviorSubject, throwError } from 'rxjs';
+import { BehaviorSubject, throwError, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { SorterService } from 'src/app/+films/services/sorter.service';
 import { FilmsService } from 'src/app/+films/services/films.service';
@@ -26,6 +26,7 @@ export class AuthService {
   private isLogged$ = new BehaviorSubject<boolean>(false);
   private sendingData$ = new BehaviorSubject<boolean>(false);
   private error$ = new BehaviorSubject<string>('');
+  private userData$ = new BehaviorSubject<UserData>(null);
 
   login(loginData: LoginData) {
     this.sendingData$.next(true);
@@ -47,6 +48,7 @@ export class AuthService {
     this.http.get(this.userDataUrl).subscribe(
       (res: UserData) => {
         window.sessionStorage.setItem('userData', JSON.stringify(res));
+        this.userData$.next(res);
       },
       err => {
         throwError(err);
@@ -65,8 +67,8 @@ export class AuthService {
     this.filmService.setLimit(5);
   }
 
-  getUserData(): UserData {
-    return JSON.parse(window.sessionStorage.getItem('userData'));
+  getUserData(): Observable<UserData> {
+    return this.userData$.asObservable();
   }
 
   handleError(err) {
