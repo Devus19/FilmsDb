@@ -1,0 +1,28 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+}
+
+th {
+  text-align: start;
+  font-weight: normal;
+}
+
+button {
+  border: 0;
+  -webkit-appearance: none;
+}
+
+a {
+  text-decoration: none;
+}

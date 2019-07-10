@@ -1,0 +1,23 @@
+@import "variables/colors";
+@import "variables/typography";
+
+.currPage {
+  font-weight: bold;
+  color: $primary
+}
+
+.pagination {
+  border-collapse: collapse;
+  margin: auto;
+  margin-top: 15px;
+  color: $font-gray;
+  td {
+    min-width: 20px;
+    text-align: center;
+    cursor: pointer;
+
+    &:active {
+      color: $primary;
+    }
+  }
+}

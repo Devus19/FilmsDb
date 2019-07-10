@@ -1,0 +1,79 @@
+@import "variables/colors";
+@import "variables/dimensions";
+@import "variables/breakpoints";
+@import "variables/typography";
+@import "globals/mixins";
+.login-form__wrapper {
+  @include mq($tablet){
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(black, 0.5),
+      rgba(black, 0.5)
+    ), url("../../../../../assets/bg.jpg");
+    background-clip: content-box;
+    background-position: 30% 0;
+  }
+
+  @include mq($desktop){
+    background-position: 0 0;
+  }
+}
+
+.login-form__form {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  width: 300px;
+  height: 350px;
+  margin: auto;
+  margin-top: 50px;
+  padding: $spaces-medium;
+  border-radius: $radius;
+  background-color: $secondaryBg;
+  box-shadow: 2px 3px 15px black;
+
+  @include mq($tablet){
+    top: 150px;
+    width: 400px;
+  }
+}
+
+.login-form__group {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 10px;
+}
+
+.login-form__label {
+  color: $font-light;
+  font-size: $font-size-small;
+}
+
+.login-form__field {
+  height: 45px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 0;
+  border-radius: $radius;
+  font-family: $font-family;
+  color: $font-dark;
+}
+
+.login-form__field::placeholder {
+  color: $font-medium;
+  margin-top: 5px;
+}
+
+.login-form__error {
+  margin-top: 10px;
+}
+
+.login-form__btn {
+  position: absolute;
+  bottom: 30px;
+  align-self: center;
+}

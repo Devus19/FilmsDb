@@ -1,0 +1,13 @@
+body {
+  font-family: $font-family;
+  background: $primaryBg;
+}
+
+.error {
+  color: $error;
+  font-size: 70%;
+}
+
+a:hover {
+  background-color: rgba($primary, 0.8);
+}

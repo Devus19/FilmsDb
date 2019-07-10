@@ -1,8 +1,7 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-* {
-  box-sizing: border-box;
-}
+@import "variables/typography";
+@import "variables/dimensions";
+@import "variables/colors";
+@import "variables/breakpoints";
+@import "globals/mixins";
+@import "globals/reset";
+@import "globals/global";

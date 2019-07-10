@@ -1,0 +1,11 @@
+<table class="pagination">
+  <td (click)="changePage('first')"> << </td>
+  <td (click)="changePage('prev')"> < </td>
+  <td *ngFor="let number of pagesArray; let i = index"
+    [ngClass]="{'currPage': number === currentPage}"
+    (click)="changePage(number)">
+    {{number}}
+  </td>
+  <td (click)="changePage('next')"> > </td>
+  <td (click)="changePage('last')"> >> </td>
+</table>

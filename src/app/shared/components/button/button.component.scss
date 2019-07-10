@@ -1,0 +1,25 @@
+@import "variables/colors";
+@import "variables/dimensions";
+@import "globals/mixins";
+
+.btn {
+  width: 100px;
+  height: 35px;
+  padding: 7.5px;
+  background-color: $primary;
+  border-radius: $button-radius;
+  text-align: center;
+  color: $font-dark;
+  cursor: pointer;
+}
+
+.btn-transparent {
+  background-color: transparent;
+  padding: 6.5px;
+  border: 1px solid $primary;
+  color: $primary;
+}
+
+.small {
+  width: 70px;
+}

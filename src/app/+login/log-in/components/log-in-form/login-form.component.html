@@ -1,0 +1,21 @@
+<div class="login-form__wrapper">
+<form class="login-form__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="error" *ngIf="!!error">{{ error }}</div>
+  <div class="login-form__group">
+    <label class="login-form__label">
+      Email:
+    </label>
+    <input type="text" placeholder="email@example.com" class="login-form__field" required formControlName="login">
+    <div class="error login-form__error" *ngIf="isFieldValid('login')">Email jest wymagany</div>
+  </div>
+  <div class="login-form__group">
+    <label class="login-form__label">
+      Hasło:
+    </label>
+    <input type="password" placeholder="hasło" class="login-form__field" required formControlName="password">
+    <div class="error login-form__error" *ngIf="isFieldValid('password')">Hasło jest wymagane</div>
+  </div>
+  <app-button class="login-form__btn center" type="submit" *ngIf="!isLoading">Wyślij</app-button>
+  <img rel="prerender" src="../../../../../../assets/loader.svg" *ngIf="isLoading">
+</form>
+</div>

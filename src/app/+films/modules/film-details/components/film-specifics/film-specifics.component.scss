@@ -1,0 +1,103 @@
+@import "globals/mixins";
+@import "variables/breakpoints";
+@import "variables/colors";
+@import "variables/typography";
+
+.specifics__wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 10px 10px;
+  margin: auto;
+
+  @include mq($desktop) {
+    flex-flow: row nowrap;
+  }
+}
+
+.specifics__img {
+  width: 250px;
+  height: auto;
+
+  @include mq($desktop) {
+    width: 400px;
+    padding-right: 20px;
+  }
+}
+
+.specifics__info {
+  display: flex;
+  flex-flow: column nowrap;
+  align-self: flex-start;
+}
+
+.specifics__title {
+  color: $font-light;
+  font-size: $font-size-big;
+
+  @include mq($desktop) {
+    font-size: $font-size-huge;
+  }
+}
+
+.specifics__name {
+  color: $font-gray;
+}
+
+.specifics__vertical {
+  @include mq($desktop){
+  display:flex;
+  margin-bottom: 20px;
+  }
+}
+
+.specifics__value {
+  color: $primary;
+  font-size: $font-size-small;
+
+  @include mq($desktop) {
+    font-size: $font-size-big;
+    margin-right: 15px;
+  }
+}
+
+
+.actors__photo {
+  height: 100px;
+  border-radius: 10px;
+
+  @include mq($desktop) {
+    height: 150px;
+    border-radius: 10px;
+  }
+}
+
+.actors__name {
+  color: $font-light;
+}
+
+.actors__wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.actor__wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 10px;
+  width: 130px;
+  @include mq($desktop) {
+    width: 170px;
+  }
+}
+
+.line {
+  width: 50px;
+  height: 3px;
+  margin: 10px 0;
+  background-color: $primary;
+  border-radius: 10px;
+}
+
+
