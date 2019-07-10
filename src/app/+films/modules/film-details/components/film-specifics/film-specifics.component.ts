@@ -1,5 +1,6 @@
+import { Film, Actor } from 'src/app/shared/films/models/films.models';
+
 import { Component, Input } from '@angular/core';
-import { Film } from 'src/app/shared/films/models/films.models';
 
 @Component({
   selector: 'app-film-specifics',
@@ -8,4 +9,5 @@ import { Film } from 'src/app/shared/films/models/films.models';
 })
 export class FilmSpecificsComponent {
   @Input() film: Partial<Film>;
+  @Input() actors: Actor[];
 }

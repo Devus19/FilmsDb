@@ -1,59 +1,37 @@
-@import "globals/colors";
+@import "variables/colors";
+@import "variables/typography";
+@import "variables/breakpoints";
+@import "globals/mixins";
+
 
 .top-menu {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 10px;
-  background-color: $secondary;
+  height: 80px;
+  background-color: $secondaryBg;
+}
+
+.top-menu__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .top-menu__logo {
-  width: 50px;
-  height: 50px;
-  margin: 5px;
-  border: 2px solid black;
-  padding: 2px;
-  background-color: $primary;
-}
-
-.top-menu__title {
-  justify-self: center;
-  margin: 5px;
-  padding-right: 5px;
-  border-bottom: 2px solid black;
-  border-right: 2px solid black;
-  font-size: 6vw;
-}
-
-.top-menu__btn {
-  width: fit-content;
-  height: fit-content;
-  font-size: 3vw;
-  margin: 5px;
-}
-
-@media (min-width: 545px){
-
-  .top-menu__logo {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-    padding: 10px;
-  }
-
-  .top-menu__btn {
-    width: 100px;
-    margin: 10px;
-    font-size: initial;
-  }
-
-  .top-menu__title {
-    margin: 10px;
-    letter-spacing: 6px;
+  color: $primary;
+  font-size: $font-size-big;
+  @include mq($tablet) {
     font-size: 2em;
   }
 }
 
-//letter spacing
+.top-menu__name {
+  margin-right: 5px;
+  color: $font-light;
+  font-size: $font-size-small;
+  @include mq($tablet) {
+    font-size: $font-size-regular;
+  }
+}

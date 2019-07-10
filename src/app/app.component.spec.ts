@@ -3,16 +3,15 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
 import { TopMenuComponent } from './shared/components/top-menu/top-menu.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ButtonComponent } from './shared/components/button/button.component';
+import { WrapperComponent } from './shared/components/wrapper/wrapper.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent, TopMenuComponent
-      ],
+      imports: [RouterTestingModule, HttpClientModule],
+      declarations: [AppComponent, TopMenuComponent, ButtonComponent, WrapperComponent]
     }).compileComponents();
   }));
 

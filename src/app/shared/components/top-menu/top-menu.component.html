@@ -1,25 +1,28 @@
 <header class="top-menu">
-  <img
-    src="assets/video-camera.svg"
-    class="top-menu__logo" />
-  <h1
-    class="top-menu__title">
-    Films&nbsp;Database
-  </h1>
-  <a
-    class="btn top-menu__btn"
-    *ngIf="!isLoggedIn && currentRoute !== '/login'"
-    [routerLink]="['/login']">
-    Zaloguj
-  </a>
-  <div *ngIf="!!userData && isLoggedIn">
-    <span>
-    {{userData.firstName}}
-    </span>
-    <a
-      class="btn top-menu__btn"
-      (click)="logout()">
-      Wyloguj
-    </a>
-</div>
+  <app-wrapper>
+    <div class="top-menu__wrapper">
+      <h1
+        class="top-menu__logo">
+        Films&nbsp;Database
+      </h1>
+      <a
+        class="btn top-menu__btn"
+        *ngIf="!isLoggedIn && currentRoute !== '/login'"
+        [routerLink]="['/login']">
+        Zaloguj
+      </a>
+      <div *ngIf="!!userData && isLoggedIn">
+        <span class="top-menu__name">
+        {{userData.firstName}}
+        </span>
+        <app-button
+          (click)="logout()"
+          [transparent]="true"
+          [small]="true"
+        >
+          Wyloguj
+        </app-button>
+      </div>
+    </div>
+  </app-wrapper>
 </header>

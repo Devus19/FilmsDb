@@ -1,5 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-films-count',
@@ -9,13 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class FilmsCountComponent {
   @Output() setItemsPerPage = new EventEmitter<number>();
 
-  filmCount = new FormGroup({
-    filmsNumber: new FormControl('', [Validators.required, Validators.min(3)])
-  });
-
-  handleSubmit() {
-    if (this.filmCount.valid) {
-      this.setItemsPerPage.emit(this.filmCount.value.filmsNumber);
-    }
+  setItems(num: any) {
+      this.setItemsPerPage.emit(num.target.value);
   }
 }

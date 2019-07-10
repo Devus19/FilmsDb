@@ -1,65 +1,89 @@
-@import "globals/colors";
-
-$tableWidth: 320px;
+@import "variables/colors";
+@import "variables/dimensions";
+@import "variables/typography";
+@import "variables/breakpoints";
+@import "globals/mixins";
 
 .table {
-  border: 1px solid black;
-  border-collapse: collapse;
-  margin: auto;
-  min-width: $tableWidth;
   position: relative;
-  border-spacing: 0;
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
+  color: $font-light;
+  td {
+    padding: 10px;
+  }
+
+  @include mq($tablet){
+    width: 600px;
+    td {
+      padding: 15px 20px;
+    }
+  }
 }
 
 .table__headers {
   height: 40px;
-  th {
-    border: 1px solid black;
-    background-color: $secondary;
-  }
+  padding: 5px;
+  font-weight: $font-medium;
+  background-color: lighten($secondaryBg, 3);
 }
 
 .table__row {
-  border: 1px solid black;
   cursor: pointer;
-  background-color: lighten($secondary, 40);
-  td {
-    border: 1px solid black;
-  }
+  font-size: $font-size-small;
+  background-color: lighten($primaryBg, 2);
 }
 
-.table__row--even {
-  background-color: lighten($secondary, 30);
+.table__row--odd {
+  color: $font-gray;
+  background-color: lighten($primaryBg, 3);
 }
 
 .table__row:hover {
-  background-color: adjust-hue($primary, 15)
+  color: black;
+  background-color: $primary;
+  font-weight: $font-medium;
+}
+
+.table__sign {
+  color: $primary;
+  @include mq($tablet){
+    margin-left: 5px;
+  }
 }
 
 .table__lp {
   width: 30px;
+  @include mq($tablet) {
+    width: 60px;
+    padding: 10px 15px;
+  }
 }
 
 .table__title {
   cursor: pointer;
+  @include mq($tablet) {
+    padding: 15px 20px;
+  }
 }
 
 .table__year {
   width: 41px;
   cursor: pointer;
+  @include mq($tablet) {
+    width: 100px;
+    padding: 15px 20px;
+  }
 }
 
 .table__metascore {
   width: 70px;
   cursor: pointer;
-}
-
-.table__year-cells {
-  text-align: center;
-}
-
-.table__metascore-cells {
-  text-align: center;
+  @include mq($tablet) {
+    width: 140px;
+    padding: 15px 20px;
+  }
 }
 
 .loader {
@@ -69,30 +93,8 @@ $tableWidth: 320px;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(white, 0.5);
-  width: $tableWidth;
+  background-color: rgba(black, 0.7);
+  width: 100%;
   height: 100%;
   border-color: transparent;
-}
-
-@media (min-width: 545px){
-
-  $tableWidth: 500px;
-
-  .table {
-    min-width: $tableWidth;
-  }
-
-  .loader {
-    width: $tableWidth;
-  }
-
-  .table__year {
-    width: 70px;
-  }
-
-  .table__metascore {
-    width: 150px;
-  }
-
 }

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilmsCountComponent } from './films-count.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 describe('FilmsCountComponent', () => {
   let component: FilmsCountComponent;
@@ -8,7 +9,8 @@ describe('FilmsCountComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FilmsCountComponent ]
+      declarations: [ FilmsCountComponent ],
+      imports: [ReactiveFormsModule, FormsModule]
     })
     .compileComponents();
   }));

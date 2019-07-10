@@ -1,14 +1,23 @@
+@import "variables/colors";
+@import "variables/dimensions";
+@import "variables/typography";
+
 .count {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
+  width: 320px;
   margin: auto;
   margin-bottom: 3px;
 }
 
-.count__inputs {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
+.count__label {
+  color: $font-gray;
+}
+
+.count__select {
+  padding: 5px;
+  margin-left: $spaces-small;
+  border: 1px solid $font-gray;
+  border-radius: 5px;
+  color: $font-gray;
+  font-family: $font-family;
+  background-color: $primaryBg;
 }

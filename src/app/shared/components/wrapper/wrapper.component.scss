@@ -1,0 +1,17 @@
+@import "variables/dimensions";
+@import "variables/breakpoints";
+@import "globals/mixins";
+
+:host {
+  display: block;
+  width: 100%;
+  padding: 0 $spaces-small;
+
+  @include mq($tablet){
+    padding: 0 $spaces-medium;
+  }
+
+  @include mq($desktop){
+    padding: 0 $spaces-big;
+  }
+}

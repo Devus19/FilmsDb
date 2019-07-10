@@ -7,22 +7,22 @@ html, body {
   box-sizing: border-box;
 }
 
-.btn {
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+}
+
+th {
+  text-align: start;
+  font-weight: normal;
+}
+
+button {
   border: 0;
+  -webkit-appearance: none;
+}
+
+a {
   text-decoration: none;
-  cursor: pointer;
-}
-
-@media (min-width: 545px){
-
-  html, body {
-    font-size: 100%;
-  }
-}
-
-@media (min-width: 1200px){
-
-  html, body {
-    font-size: 110%;
-  }
 }

@@ -1,2 +1,7 @@
-<app-film-specifics [film]="film"></app-film-specifics>
-<app-actors-list [actors]="actors"></app-actors-list>
+<div class="film-wrapper">
+  <div *ngIf="!!actors && !!film">
+    <app-film-specifics [film]="film" [actors]="actors"></app-film-specifics>
+    <app-button (click)="goBack()">Wróć</app-button>
+  </div>
+  <img rel="prerender" class="loader" src="../../../../../../assets/loader.svg" *ngIf="!actors || !film">
+</div>

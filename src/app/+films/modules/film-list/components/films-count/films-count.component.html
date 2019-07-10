@@ -1,8 +1,9 @@
-<form class="count" [formGroup]="filmCount" (ngSubmit)="handleSubmit()">
-  <label>Wyniki na stronę:</label>
-  <span class="error" *ngIf="!filmCount.valid && filmCount.touched">Minimum 3 pozycje</span>
-  <div class="count__inputs">
-    <input type="number" min="5" formControlName="filmsNumber">
-    <input type="submit">
-  </div>
+<form class="count">
+  <label class="count__label">Ilość wyników:</label>
+  <select class="count__select" (change)="setItems($event)">
+      <option value="5" selected>Ilość</option>
+      <option value="5" (click)="setItems(5)">5</option>
+      <option value="10" (click)="setItems(10)">10</option>
+      <option value="15" (click)="setItems(15)">15</option>
+  </select>
 </form>

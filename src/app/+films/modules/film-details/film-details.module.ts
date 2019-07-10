@@ -1,16 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { ActorsListComponent } from './components/actors-list/actors-list.component';
 import { FilmSpecificsComponent } from './components/film-specifics/film-specifics.component';
 import { FilmDetailsComponent } from './containers/film-details/film-details.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  declarations: [
-    ActorsListComponent,
-    FilmSpecificsComponent,
-    FilmDetailsComponent
-  ],
-  imports: [CommonModule]
+  declarations: [FilmSpecificsComponent, FilmDetailsComponent],
+  imports: [CommonModule, SharedModule]
 })
 export class FilmDetailsModule {}

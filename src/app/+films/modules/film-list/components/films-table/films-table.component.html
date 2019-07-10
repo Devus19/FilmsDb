@@ -1,18 +1,24 @@
 <table class="table">
   <tr class="table__headers">
     <th class="table__lp">L.p.</th>
-    <th class="table__title" (click)="changeSort('title')">Tytuł
-      {{ title === '1' ? asc : (title === '-1' ? desc : '') }}</th>
-    <th class="table__year" (click)="changeSort('year')">Rok {{ year === '1' ? asc : (year === '-1' ? desc : '') }}</th>
-    <th class="table__metascore" (click)="changeSort('metascore')">Metascore
-      {{ metascore === '1' ? asc : (metascore === '-1' ? desc : '') }}
+    <th class="table__title" (click)="changeSort('title')">
+      <span>Tytuł</span>
+      <span class="table__sign">{{ title === '1' ? asc : (title === '-1' ? desc : '') }}</span>
+    </th>
+    <th class="table__year" (click)="changeSort('year')">
+      <span>Rok</span>
+      <span class="table__sign">{{ year === '1' ? asc : (year === '-1' ? desc : '') }}</span>
+    </th>
+    <th class="table__metascore" (click)="changeSort('metascore')">
+      <span>Metascore</span>
+      <span class="table__sign">{{ metascore === '1' ? asc : (metascore === '-1' ? desc : '') }}</span>
     </th>
   </tr>
   <tr
     class="table__row"
     *ngFor="let film of films; let i = index; let even = even;"
     [routerLink]="['../details/', film.imdbId]"
-    [ngClass]="{'table__row--even': even}"
+    [ngClass]="{'table__row--odd': even}"
   >
     <td>{{ ((i + 1) + itemsPerPage * (currentPage - 1)) }}.</td>
     <td>{{film.title}}</td>

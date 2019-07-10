@@ -1,12 +1,7 @@
-@import "globals/colors";
+@import "variables/typography";
+@import "variables/dimensions";
+@import "variables/colors";
+@import "variables/breakpoints";
+@import "globals/mixins";
 @import "globals/reset";
-@import "globals/buttons";
-
-html, body {
-  background: $primaryBg;
-}
-
-.error {
-  color: red;
-  font-size: 70%;
-}
+@import "globals/global";

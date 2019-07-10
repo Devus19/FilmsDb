@@ -1,9 +1,34 @@
-<a href="https://www.imdb.com/title/{{film.imdbId}}">
-  <img src={{film.posterUrl}}/>
-</a>
-<ul>
-  <li>Tytuł: {{film.title}}</li>
-  <li>Reżyser: {{film.director}}</li>
-  <li>Rok produkcji: {{film.year}}</li>
-  <li>Metascore: {{film.metascore}}</li>
-</ul>
+<div class="specifics__wrapper">
+  <img class="specifics__img" src={{film.posterUrl}} />
+  <div class="specifics__info">
+    <a href="https://www.imdb.com/title/{{film.imdbId}}">
+      <h2 class="specifics__title">{{film.title}}</h2>
+    </a>
+    <div class="line"></div>
+    <div class="specifics__vertical">
+      <h3 class="specifics__value">
+        <span class="specifics__name">Reżyser: </span>
+        {{film.director}}
+      </h3>
+      <h3 class="specifics__value">
+        <span class="specifics__name">Rok produkcji: </span>
+        {{film.year}}
+      </h3>
+      <h3 class="specifics__value">
+        <span class="specifics__name">Metascore: </span>
+        {{film.metascore}}
+      </h3>
+    </div>
+
+    <div class="actors__wrapper" *ngIf="!!actors">
+      <div class="actor__wrapper" *ngFor="let actor of actors">
+        <img class="actors__photo" src={{actor.photoUrl}} />
+        <a href="https://www.imdb.com/name/{{actor.imdbId}}">
+          <span class="actors__name">
+            {{actor.name}}
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

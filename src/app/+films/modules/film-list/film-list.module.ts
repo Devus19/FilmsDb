@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { FilmsCountComponent } from './components/films-count/films-count.component';
@@ -15,6 +14,6 @@ import { FilmListComponent } from './containers/film-list/film-list.component';
     FilmsTableComponent,
     FilmListComponent
   ],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule]
+  imports: [CommonModule, RouterModule]
 })
 export class FilmListModule {}

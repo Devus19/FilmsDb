@@ -16,7 +16,7 @@ export class FilmsService {
   ) {
 
   }
-  private;
+
   private httpParams = new HttpParams();
   private limit = 5;
   private page = 1;

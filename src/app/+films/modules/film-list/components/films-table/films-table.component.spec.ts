@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilmsTableComponent } from './films-table.component';
+import { RouterModule } from '@angular/router';
 
 describe('FilmsTableComponent', () => {
   let component: FilmsTableComponent;
@@ -8,7 +9,8 @@ describe('FilmsTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FilmsTableComponent ]
+      declarations: [ FilmsTableComponent ],
+      imports: [RouterModule]
     })
     .compileComponents();
   }));

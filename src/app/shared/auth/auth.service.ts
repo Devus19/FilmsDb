@@ -7,12 +7,17 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { LoginData, LoginResponse, UserData } from '../login/models/login.models';
+import {
+  LoginData,
+  LoginResponse,
+  UserData
+} from '../login/models/login.models';
+import { AutoUnsubscribe } from '../shared/autoUnsubscribe.adapter';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService extends AutoUnsubscribe {
   private baseUrl = 'https://marblejs-example.herokuapp.com/api/v1/';
   private loginUrl = `${this.baseUrl}auth/login`;
   private userDataUrl = `${this.baseUrl}users/me`;
@@ -22,7 +27,9 @@ export class AuthService {
     private router: Router,
     private sorter: SorterService,
     private filmService: FilmsService
-  ) {}
+  ) {
+    super();
+  }
 
   private isLogged$ = new BehaviorSubject<boolean>(false);
   private sendingData$ = new BehaviorSubject<boolean>(false);
@@ -31,22 +38,24 @@ export class AuthService {
 
   login(loginData: LoginData) {
     this.sendingData$.next(true);
-    this.http.post(this.loginUrl, JSON.stringify(loginData)).subscribe(
-      (res: LoginResponse) => {
-        window.sessionStorage.setItem('token', res.token);
-        this.setInitialSettings();
-        this.fetchUserData();
-        this.error$.next('');
-      },
-      err => {
-        catchError(this.handleError(err));
-        this.sendingData$.next(false);
-      }
-    );
+    this.subs.sink = this.http
+      .post(this.loginUrl, JSON.stringify(loginData))
+      .subscribe(
+        (res: LoginResponse) => {
+          window.sessionStorage.setItem('token', res.token);
+          this.setInitialSettings();
+          this.fetchUserData();
+          this.error$.next('');
+        },
+        err => {
+          catchError(this.handleError(err));
+          this.sendingData$.next(false);
+        }
+      );
   }
 
   fetchUserData() {
-    this.http.get(this.userDataUrl).subscribe(
+    this.subs.sink = this.http.get(this.userDataUrl).subscribe(
       (res: UserData) => {
         window.sessionStorage.setItem('userData', JSON.stringify(res));
         this.userData$.next(res);
